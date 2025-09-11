@@ -1,14 +1,14 @@
-﻿namespace StudentGradesProject
+namespace StudentGradesProject
 {
     class StudentStatistics
     {
-        private string[] names;
-        private int[] grades;
+        private string[] nevek;
+        private int[] erdemjegyek;
 
         public StudentStatistics()
         {
             // 20 tanuló neve
-            names = new string[]
+            nevek = new string[]
             {
                 "Anna", "Bence", "Csilla", "Dávid", "Erika",
                 "Ferenc", "Gábor", "Hanna", "István", "Judit",
@@ -17,7 +17,7 @@
             };
 
             // 20 tanuló jegye (1–5 között)
-            grades = new int[]
+            erdemjegyek = new int[]
             {
                 5, 3, 2, 4, 1,
                 2, 5, 4, 3, 2,
@@ -26,24 +26,51 @@
             };
         }
 
-        // 1. Jegyek kiíratása
+        // 1. Jegyek kiíratása nevekkel
         public void PrintGrades()
         {
+            // foreach
+            foreach (int jegy in erdemjegyek)
+            {
+                Console.WriteLine(jegy);
+
+                foreach (string nev in nevek)
+                {
+                    Console.WriteLine(nev);
+                    Console.WriteLine("jegy: " + erdemjegyek[jegy] + "nev: " + Convert(ToString(nevek[nev]));
+                }
+            }
         }
 
         // 2. Jegyek száma
         public void CountGrades()
         {
+            int db = 0;
+            foreach(int jegy in erdemjegyek)
+            {
+                db++;
+            }
+            Console.WriteLine("az erdemjegyek darabszama a tombben: " + db);
         }
 
         // 3. Első és utolsó jegy
-        public void FirstAndLastGrade()
+        /*public void FirstAndLastGrade()
         {
-        }
+            //erdemjegyek[0]
+            int utolsoIndexe=erdemjegyek.Length-1;
+
+        }*/
+       
 
         // 5. Jegyek átlaga
-        public void AverageGrade()
+        /*public void AverageGrade()
         {
+            //int szumma = 0;
+
+        //    for(int jegy in erdemjegyek)
+        //    {
+        //        szumma=;
+        //    }
         }
 
         // 6. Legjobb jegy nevekkel
