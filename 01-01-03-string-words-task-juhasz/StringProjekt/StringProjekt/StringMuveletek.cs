@@ -23,7 +23,7 @@
         /// <example>KezdodikE("alma", "al") => true</example>
         private static bool KezdodikE(string szoveg, string keresett)
         {
-            return szoveg.StartsWith(keresett);      //szoveg.ElementAT(0)==keresett.ElementAt((0));    a tomb[i] eleme
+            return false;
         }
 
         /// <summary>
@@ -35,15 +35,7 @@
         /// <example>SzavakKezdodikEvel(["alma", "fa"], "a") => ["alma"]</example>
         public static string[] SzavakKezdodikEvel(string[] szavak, string keresett)
         {
-            List<string> talalt = new List<string>();
-            foreach(string szo in szavak)
-            {
-                if(KezdodikE(szo, keresett))
-                {
-                    talalt.Add(szo);
-                    return talalt.ToArray();
-                }
-            }
+            return [];
         }
 
         /// <summary>
