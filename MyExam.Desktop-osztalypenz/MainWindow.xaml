@@ -1,0 +1,41 @@
+﻿<Window x:Class="ClassFundProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClassFundProject"
+        xmlns:vm="clr-namespace:ClassFundProject.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1200">
+    <Window.DataContext>
+        <vm:ClassFundViewModel />
+    </Window.DataContext>
+    <StackPanel>
+        <Label Content="{Binding CountText}" />
+        <ListView ItemsSource="{Binding ClassFunds}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" Width="50" />
+                    <GridViewColumn Header="Student name" DisplayMemberBinding="{Binding StudentName}" Width="150" />
+                    <GridViewColumn Header="Month" DisplayMemberBinding="{Binding Month}" Width="120" />
+                    <GridViewColumn Header="Amount (Ft)" DisplayMemberBinding="{Binding Amount}" Width="100" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        <ListView>
+            <Label>nev: </Label>
+            <TextBlock Text="{Binding SelectedClassFunds.StudentName}"/>
+
+            <Label>honap: </Label>
+            <TextBlock Text="{Binding SelectedClassFunds.Month}"/>
+
+            <Label>befizetett osszeg: </Label>
+            <TextBlock Text="{Binding SelectedClassFunds.Amount}"/>
+
+            <Label>**update:**</Label>
+            <TextBox Text="{Binding UpdatedMoney}"></TextBox>
+            <Button Command="{Binding UpdateMoneyCommand}">modositas</Button>
+        </ListView>
+    </StackPanel>
+</Window>

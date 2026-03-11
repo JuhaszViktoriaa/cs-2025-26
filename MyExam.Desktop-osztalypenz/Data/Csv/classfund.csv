@@ -1,0 +1,26 @@
+id,studentName,month,amount
+1,Kiss Gábor,Szeptember,5000
+2,Nagy Anna,Szeptember,4000
+3,Szabó László,Szeptember,0
+4,Tóth Eszter,Szeptember,3000
+5,Kiss Gábor,Október,0
+6,Nagy Anna,Október,4000
+7,Szabó László,Október,12000
+8,Tóth Eszter,Október,3000
+9,Varga Péter,Szeptember,3000
+10,Varga Péter,Október,3000
+11,Kiss Gábor,November,10000
+12,Nagy Anna,November,4000
+13,Szabó László,November,6000
+14,Kiss Gábor,December,5000
+15,Tóth Eszter,November,3000
+16,Varga Péter,November,3000
+17,Nagy Anna,December,4000
+18,Kiss Gábor,Január,5000
+19,Nagy Anna,Január,4000
+20,Szabó László,December,6000
+21,Tóth Eszter,December,0
+22,Varga Péter,December,3000
+23,Szabó László,Január,6000
+24,Tóth Eszter,Január,6000
+25,Varga Péter,Január,3000
