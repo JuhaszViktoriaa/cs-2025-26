@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyExam.Desktop_erettsegi.Repo
+{
+    public class ErettsegiRepo
+    {
+        private readonly ErettsegiContext _context = new ErettsegiContext();
+
+        public int Count()
+        {
+            return _context.Erettsegi.Count();
+        }
+
+        public List<Erettsegi> GetAll()
+        {
+            return _context.Erettsegi.ToList();
+        }
+
+        public void Update(int id, int updatedJegy)
+        {
+            var eredmeny = _context.Erettsegi.Find(id);
+            if (eredmeny != null)
+                return;
+            eredmeny.Jegy = updatedJegy;
+            _context.Erettsegi.Update(eredmeny);
+            _context.SaveChanges(); 
+        }
+    }
+}

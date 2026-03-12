@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyExam.Desktop_erettsegi.ViewModel
+{
+    public partial class ErettsegiViewModel : ObservableObject
+    {
+        [ObservableProperty]
+        private string countText;
+
+        [ObservableProperty]
+        private ObservableCollection<Erettsegi> erettsegik;
+
+        [ObservableProperty]
+        private Erettsegi selectedErettsegi;
+
+        [ObservableProperty]
+        private int updatedJegy;
+
+        public ErettsegiViewModel()
+        {
+            CountText = $"{repo.Count()} adat van az adatbazisban.";
+            Erettegi = new ObservableCollection<Erettsegi>(repo.GetAll());
+        }
+
+        partial void OnSelectedErettsegiChanged(Erettsegi value)
+        {
+            UpdatedJegy = value.Jegy;
+        }
+
+        [RelayCommand]
+        public void UpdateJegy()
+        {
+            repo.Update(SelectedErettsegi.Id, UpdatedJegy);
+            Erettsegi = new ObservableCollection<Erettsegi>(repo.GetAll());
+        }
+    }
+}
